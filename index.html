@@ -24,26 +24,27 @@
   <meta name="twitter:description" content="Mi sueño está por cumplirse y quiero compartirlo con vos">
   <meta name="twitter:image" content="https://taleika.github.io/pazxv/images/miniatura.jpg">
 
-  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@300;400;500;600&family=Josefin+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --pink-main: #f48fb1;
-      --pink-light: #f9b7c8;
-      --accent: #a1cfff;
-      --bg: #fff9fc;
+      --rose-dark: #7a1e46;
+      --rose-dark-2: #5f1637;
+      --rose-soft: #f8edf2;
+      --bg: #fffafb;
       --bg-soft: #ffffff;
-      --text: #3a3a44;
-      --pink-hover: #ea7aa2;
+      --text: #1f1b1e;
+      --text-on-dark: #ffffff;
+      --btn-dark-hover: #52112f;
     }
 
     body {
       margin: 0;
-      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Cormorant Garamond', serif;
       background: var(--bg);
       color: var(--text);
       text-align: center;
       overflow-x: hidden;
-      background-image: radial-gradient(circle at 20% 10%, rgba(244, 143, 177, 0.16) 0%, transparent 36%), radial-gradient(circle at 80% 20%, rgba(161, 207, 255, 0.26) 0%, transparent 34%);
+      background-image: radial-gradient(circle at 20% 10%, rgba(122, 30, 70, 0.14) 0%, transparent 36%), radial-gradient(circle at 80% 20%, rgba(95, 22, 55, 0.13) 0%, transparent 34%);
     }
 
     h2,
@@ -52,7 +53,7 @@
       font-family: 'Cormorant Garamond', serif;
       margin: 20px 0;
       line-height: 1.2;
-      color: var(--pink-main);
+      color: var(--text);
       letter-spacing: 0.02em;
     }
 
@@ -60,9 +61,10 @@
       content: "✦ ✦ ✦";
       display: block;
       margin-top: 12px;
-      color: var(--pink-main);
+      color: currentColor;
       font-size: 18px;
       letter-spacing: 0.18em;
+      opacity: 0.55;
     }
 
     h2 {
@@ -75,6 +77,7 @@
 
     p {
       font-size: 1.02em;
+      font-weight: 300;
       line-height: 1.75;
       max-width: 760px;
       margin: 0 auto 20px auto;
@@ -146,48 +149,21 @@
     }
 
     .accent-section {
-      background: var(--pink-main) !important;
-      color: #fff;
+      background: linear-gradient(160deg, var(--rose-dark), var(--rose-dark-2)) !important;
+      color: var(--text-on-dark);
     }
 
     .accent-section h2,
     .accent-section p,
-    .countdown-section p {
-      color: #fff;
-    }
-
-    .boho-divider {
-      height: 101px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 312px;
-      margin: 10px 0;
-      opacity: 0.9;
-      filter: drop-shadow(0 6px 8px rgba(244, 143, 177, 0.2));
-    }
-
-    .boho-divider:nth-of-type(4n+1) {
-      background-image: url("images/divider1.svg");
-    }
-
-    .boho-divider:nth-of-type(4n+2) {
-      background-image: url("images/divider2.svg");
-    }
-
-    .boho-divider:nth-of-type(4n+3) {
-      background-image: url("images/divider3.svg");
-    }
-
-    .boho-divider:nth-of-type(4n+4) {
-      background-image: url("images/divider4.svg");
+    .accent-section .section-title,
+    .countdown-section p,
+    .countdown-section h2 {
+      color: var(--text-on-dark);
     }
 
     /* Countdown */
     .countdown-section {
-      background: var(--accent);
+      background: linear-gradient(160deg, var(--rose-dark), var(--rose-dark-2));
       padding: 82px 20px;
     }
 
@@ -195,7 +171,7 @@
       font-family: 'Allura', cursive;
       font-size: 3.3em;
       margin-bottom: 26px;
-      color: var(--pink-main);
+      color: var(--text);
     }
 
     .countdown {
@@ -206,13 +182,13 @@
     }
 
     .countdown span {
-      background: var(--pink-main);
+      background: rgba(255,255,255,0.16);
       border: 1px solid rgba(255,255,255,0.4);
       box-shadow: 0 10px 20px rgba(244, 143, 177, 0.25);
       padding: 15px 20px;
       border-radius: 14px;
       font-size: 20px;
-      font-weight: bold;
+      font-weight: 500;
       color: #fff;
       min-width: 74px;
       display: flex;
@@ -279,28 +255,30 @@
       display: inline-block;
       margin-top: 20px;
       padding: 13px 28px;
-      background: var(--pink-main);
+      background: var(--rose-dark);
       color: #fff;
       border-radius: 30px;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 400;
       letter-spacing: 0.02em;
-      box-shadow: 0 8px 20px rgba(244, 143, 177, 0.35);
+      box-shadow: 0 8px 20px rgba(122, 30, 70, 0.35);
       transition: all 0.3s;
     }
 
     .btn:hover {
-      background: var(--pink-hover);
+      background: var(--btn-dark-hover);
       transform: translateY(-2px);
     }
 
     .btn-turquoise {
-      background: var(--accent);
-      box-shadow: 0 8px 20px rgba(161, 207, 255, 0.35);
+      background: rgba(255,255,255,0.16);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
     }
 
     .btn-turquoise:hover {
-      background: #8cbef7;
+      background: rgba(255,255,255,0.25);
     }
 
     /* Modal */
@@ -345,7 +323,7 @@
     }
 
     .green-section {
-      background: var(--bg-soft);
+      background: var(--rose-soft);
       color: var(--text);
     }
 
@@ -356,6 +334,20 @@
 
     .icon-lg {
       width: 280.8px;
+    }
+
+    .icon-on-dark {
+      filter: brightness(0) invert(1);
+    }
+
+    .fiesta-section {
+      background: linear-gradient(160deg, var(--rose-dark), var(--rose-dark-2)) !important;
+      color: var(--text-on-dark);
+    }
+
+    .fiesta-section h2,
+    .fiesta-section p {
+      color: var(--text-on-dark);
     }
 
     .bubbles {
@@ -423,14 +415,12 @@
   <img src="images/logo.png" alt="Nombre Quinceañera" class="logo" id="hero-logo">
 </header>
 
-<div class="boho-divider"></div>
 
 <!-- Nueva sección con frase -->
 <section class="soft-section">
   <h2 class="section-title" style="font-family:'Allura', cursive; font-size:1.75em;">Mi sueño está por cumplirse y quiero compartirlo con vos</h2>
 </section>
 
-<div class="boho-divider"></div>
 
 <!-- Countdown -->
 <section class="countdown-section">
@@ -443,10 +433,10 @@
   </div>
 </section>
 
-<div class="boho-divider"></div>
 
 <!-- Fiesta -->
-<section>
+<section class="fiesta-section">
+  <img src="images/icono-fiesta.svg" alt="Fiesta" class="icon icon-on-dark">
   <h2 class="section-title">Fiesta</h2>
   <p class="large-copy"><strong>09/05/2026</strong><br>
   21hs<br>
@@ -454,7 +444,6 @@
   <a href="https://maps.app.goo.gl/NfFv23x44jqwLf1BA" target="_blank" class="btn">Cómo llegar</a>
 </section>
 
-<div class="boho-divider"></div>
 
 <!-- Galería 1 -->
 <section>
@@ -466,7 +455,6 @@
   </div>
 </section>
 
-<div class="boho-divider"></div>
 
 <!-- Confirmación -->
 <section class="accent-section">
@@ -475,7 +463,6 @@
   <a href="https://forms.gle/4Ay7CAr45wf8dZu46" target="_blank" class="btn btn-turquoise">Confirmar asistencia</a>
 </section>
 
-<div class="boho-divider"></div>
 
 <!-- Dress Code -->
 <section class="green-section">
@@ -484,17 +471,15 @@
   <p class="large-copy">Elegante</p>
 </section>
 
-<div class="boho-divider"></div>
 
 <!-- Música -->
 <section class="accent-section">
-  <img src="images/icono-canciones.svg" alt="Canciones" class="icon icon-lg">
+  <img src="images/icono-canciones.svg" alt="Canciones" class="icon icon-lg icon-on-dark">
   <h2 class="section-title">¡Ayudame a elegir la música!</h2>
   <p class="large-copy">Podés sugerir tus canciones favoritas para la fiesta.</p>
   <a href="https://forms.gle/U47LLVu3waB6swKh6" target="_blank" class="btn btn-turquoise">Sugerir Canción</a>
 </section>
 
-<div class="boho-divider"></div>
 
 <!-- Galería 2 -->
 <section>
@@ -506,7 +491,6 @@
   </div>
 </section>
 
-<div class="boho-divider"></div>
 
 <!-- Regalos -->
 <section class="green-section">
@@ -515,7 +499,6 @@
  <p class="large-copy">Gracias por compartir esta noche mágica, para quienes deseen dejar un detalle habrá una urna.</p>
 </section>
 
-<div class="boho-divider"></div>
 
 <!-- Gracias -->
 <section class="accent-section">
@@ -639,7 +622,7 @@ handleParallax();
   // Burbujas flotantes
   const bubblesContainer = document.getElementById('bubbles');
   const bubbleCount = window.innerWidth <= 768 ? 10 : 18;
-  const bubblePalette = ['rgba(255,255,255,0.55)', 'rgba(249,183,200,0.45)', 'rgba(161,207,255,0.35)'];
+  const bubblePalette = ['rgba(255,255,255,0.4)', 'rgba(122,30,70,0.22)', 'rgba(95,22,55,0.2)'];
 
   for (let i = 0; i < bubbleCount; i++) {
     const bubble = document.createElement('span');
