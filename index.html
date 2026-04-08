@@ -27,14 +27,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --rose-dark: #d597be;
-      --rose-dark-2: #d597be;
+      --rose-dark: #ffa0cd;
+      --rose-dark-2: #ffa0cd;
       --rose-soft: #fff1f7;
       --bg: #fff8fc;
       --bg-soft: #fff6fb;
       --text: #1f1b1e;
       --text-on-dark: #000000;
       --btn-dark-hover: #52112f;
+      --btn-soft-pink: #fcc1dd;
     }
 
     body {
@@ -172,7 +173,7 @@
     }
 
     .countdown-title {
-      font-size: 3.3em;
+      font-size: 2.72em;
       margin-bottom: 26px;
       color: #000000;
       font-weight: 600;
@@ -365,6 +366,28 @@
       filter: brightness(0) invert(1);
     }
 
+    .fiesta-icon {
+      filter: brightness(0) saturate(100%);
+    }
+
+    .btn-soft {
+      background: var(--btn-soft-pink);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 8px 20px rgba(201, 51, 132, 0.22);
+    }
+
+    .btn-soft:hover {
+      background: #f7b1d4;
+    }
+
+    .section-divider {
+      height: 2px;
+      width: min(720px, calc(100% - 48px));
+      margin: 0 auto;
+      background: var(--rose-dark);
+      border-radius: 99px;
+    }
+
     .fiesta-section {
       background: linear-gradient(160deg, var(--rose-dark), var(--rose-dark-2)) !important;
       color: var(--text-on-dark);
@@ -419,7 +442,7 @@
       h2 { font-size: 2.4em; }
       h3 { font-size: 1.9em; }
       .section-title { font-size: 2.04em; }
-      .countdown-title { font-size: 2.6em; }
+      .countdown-title { font-size: 2.04em; }
       .countdown span { font-size: 16px; padding: 10px; min-width: 55px; }
       .icon { width: 108px; }
       .icon-lg { width: 140.4px; }
@@ -462,12 +485,12 @@
 
 <!-- Fiesta -->
 <section class="fiesta-section">
-  <img src="images/icono-fiesta.svg" alt="Fiesta" class="icon">
+  <img src="images/icono-fiesta.svg" alt="Fiesta" class="icon fiesta-icon">
   <h2 class="section-title">Fiesta</h2>
   <p class="large-copy"><strong>09/05/2026</strong><br>
   21hs<br>
   Bancarios</p>
-  <a href="https://maps.app.goo.gl/NfFv23x44jqwLf1BA" target="_blank" class="btn">Cómo llegar</a>
+  <a href="https://maps.app.goo.gl/NfFv23x44jqwLf1BA" target="_blank" class="btn btn-soft">Cómo llegar</a>
 </section>
 
 
@@ -486,7 +509,7 @@
 <section class="accent-section">
   <h2 class="section-title">Confirmación de Asistencia</h2>
   <p class="large-copy">Confirmar asistencia antes del 10/04/2026</p>
-  <a href="https://forms.gle/4Ay7CAr45wf8dZu46" target="_blank" class="btn btn-turquoise">Confirmar asistencia</a>
+  <a href="https://forms.gle/4Ay7CAr45wf8dZu46" target="_blank" class="btn btn-soft">Confirmar asistencia</a>
 </section>
 
 
@@ -517,6 +540,7 @@
   </div>
 </section>
 
+<div class="section-divider"></div>
 
 <!-- Regalos -->
 <section class="green-section">
