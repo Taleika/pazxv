@@ -27,11 +27,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --rose-dark: #9f1f61;
-      --rose-dark-2: #7f184c;
-      --rose-soft: #f8edf2;
-      --bg: #fffafb;
-      --bg-soft: #ffffff;
+      --rose-dark: #c93384;
+      --rose-dark-2: #ff69b4;
+      --rose-soft: #fff1f7;
+      --bg: #fff8fc;
+      --bg-soft: #fff6fb;
       --text: #1f1b1e;
       --text-on-dark: #ffffff;
       --btn-dark-hover: #52112f;
@@ -44,7 +44,7 @@
       color: var(--text);
       text-align: center;
       overflow-x: hidden;
-      background-image: radial-gradient(circle at 20% 10%, rgba(122, 30, 70, 0.14) 0%, transparent 36%), radial-gradient(circle at 80% 20%, rgba(95, 22, 55, 0.13) 0%, transparent 34%);
+      background-image: radial-gradient(circle at 20% 10%, rgba(201, 51, 132, 0.12) 0%, transparent 36%), radial-gradient(circle at 80% 20%, rgba(255, 105, 180, 0.1) 0%, transparent 34%);
     }
 
     h2,
@@ -170,8 +170,9 @@
     .countdown-title {
       font-size: 3.3em;
       margin-bottom: 26px;
-      color: #111;
-      font-weight: 500;
+      color: #000;
+      font-weight: 600;
+      letter-spacing: 0.03em;
     }
 
     .countdown {
@@ -212,6 +213,16 @@
       color: #fff;
       font-size: 1.75em;
       font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .final-message .section-title {
+      color: #fff;
+      font-size: 1.75em;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
 
     /* Iconos animados (latido) */
@@ -271,7 +282,7 @@
       text-decoration: none;
       font-weight: 400;
       letter-spacing: 0.02em;
-      box-shadow: 0 8px 20px rgba(122, 30, 70, 0.35);
+      box-shadow: 0 8px 20px rgba(201, 51, 132, 0.35);
       transition: all 0.3s;
     }
 
@@ -511,8 +522,8 @@
 
 
 <!-- Gracias -->
-<section class="accent-section">
-  <h2 class="section-title" style="font-family:'Allura', cursive; font-size:1.6em;">Gracias por acompañarme</h2>
+<section class="accent-section final-message">
+  <h2 class="section-title">Gracias por acompañarme</h2>
 </section>
 
 <!-- Modal Lightbox -->
@@ -630,24 +641,29 @@ window.addEventListener('resize', handleParallax);
 handleParallax();
 
   // Burbujas flotantes
+  const bubblesEnabled = false;
   const bubblesContainer = document.getElementById('bubbles');
   const bubbleCount = window.innerWidth <= 768 ? 10 : 18;
-  const bubblePalette = ['rgba(255,255,255,0.4)', 'rgba(122,30,70,0.22)', 'rgba(95,22,55,0.2)'];
+  const bubblePalette = ['rgba(255,255,255,0.4)', 'rgba(201,51,132,0.22)', 'rgba(255,105,180,0.2)'];
 
-  for (let i = 0; i < bubbleCount; i++) {
-    const bubble = document.createElement('span');
-    bubble.classList.add('bubble');
-    if (window.innerWidth <= 768 && i > 5) {
-      bubble.classList.add('mobile-hide');
+  if (bubblesEnabled) {
+    for (let i = 0; i < bubbleCount; i++) {
+      const bubble = document.createElement('span');
+      bubble.classList.add('bubble');
+      if (window.innerWidth <= 768 && i > 5) {
+        bubble.classList.add('mobile-hide');
+      }
+      const size = Math.random() * 55 + 20;
+      bubble.style.width = `${size}px`;
+      bubble.style.height = `${size}px`;
+      bubble.style.left = `${Math.random() * 100}%`;
+      bubble.style.background = bubblePalette[Math.floor(Math.random() * bubblePalette.length)];
+      bubble.style.animationDuration = `${Math.random() * 20 + 24}s`;
+      bubble.style.animationDelay = `${Math.random() * 16}s`;
+      bubblesContainer.appendChild(bubble);
     }
-    const size = Math.random() * 55 + 20;
-    bubble.style.width = `${size}px`;
-    bubble.style.height = `${size}px`;
-    bubble.style.left = `${Math.random() * 100}%`;
-    bubble.style.background = bubblePalette[Math.floor(Math.random() * bubblePalette.length)];
-    bubble.style.animationDuration = `${Math.random() * 20 + 24}s`;
-    bubble.style.animationDelay = `${Math.random() * 16}s`;
-    bubblesContainer.appendChild(bubble);
+  } else {
+    bubblesContainer.style.display = 'none';
   }
 
 
