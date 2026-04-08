@@ -114,7 +114,7 @@
 
     header img.logo {
       position: absolute;
-      bottom: 30px;
+      bottom: 150px;
       left: 50%;
       transform: translateX(-50%);
       width: 336px;
@@ -166,7 +166,47 @@
       color: var(--text-on-dark);
     }
 
-    /* Countdown */
+    /* Countdown (versión actual sobre hero) */
+    .hero-countdown {
+      position: absolute;
+      left: 50%;
+      bottom: 36px;
+      transform: translateX(-50%);
+      z-index: 2;
+      width: min(92%, 760px);
+    }
+
+    .hero-countdown .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .hero-countdown .countdown span {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      padding: 0;
+      border-radius: 0;
+      font-size: 34px;
+      font-weight: 500;
+      color: #fff;
+      min-width: 88px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-countdown .countdown small {
+      font-size: 14px;
+      margin-top: 4px;
+      color: #fff;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+    }
+
+    /* Countdown (versión original, conservada por si se quiere volver atrás) */
     .countdown-section {
       background: linear-gradient(160deg, var(--rose-dark), var(--rose-dark-2));
       padding: 82px 20px;
@@ -211,7 +251,7 @@
     }
 
     .welcome-section {
-      background: linear-gradient(160deg, var(--rose-dark), var(--rose-dark-2)) !important;
+      background: #ffffff !important;
     }
 
     .welcome-section .section-title {
@@ -382,8 +422,8 @@
 
     .section-divider {
       height: 6px;
-      width: min(720px, calc(100% - 48px));
-      margin: 0 auto;
+      width: 100%;
+      margin: 0;
       background: var(--rose-dark);
       border-radius: 99px;
     }
@@ -431,7 +471,7 @@
       z-index: 999;
       animation: pulse 1.8s ease-in-out infinite;
       transition: opacity 0.3s;
-      filter: brightness(0);
+      filter: none;
     }
 
     #music-btn.playing {
@@ -445,9 +485,23 @@
       .section-title { font-size: 2.04em; }
       .countdown-title { font-size: 2.04em; }
       .countdown span { font-size: 16px; padding: 10px; min-width: 55px; }
+      .hero-countdown {
+        bottom: 26px;
+      }
+      .hero-countdown .countdown {
+        gap: 10px;
+      }
+      .hero-countdown .countdown span {
+        font-size: 24px;
+        min-width: 66px;
+        padding: 0;
+      }
+      .hero-countdown .countdown small {
+        font-size: 11px;
+      }
       .icon { width: 108px; }
       .icon-lg { width: 140.4px; }
-      header img.logo { width: 240px; }
+      header img.logo { width: 240px; bottom: 120px; }
       section { padding: 72px 20px; }
       .bubble.mobile-hide { display: none; }
     }
@@ -463,6 +517,14 @@
 <!-- Hero -->
 <header class="parallax" style="background-image:url('images/hero.jpg');">
   <img src="images/logo.png" alt="Nombre Quinceañera" class="logo" id="hero-logo">
+  <div class="hero-countdown" aria-label="Cuenta regresiva">
+    <div class="countdown">
+      <span id="days">00 <small>Días</small></span>
+      <span id="hours">00 <small>Horas</small></span>
+      <span id="mins">00 <small>Min</small></span>
+      <span id="secs">00 <small>Seg</small></span>
+    </div>
+  </div>
 </header>
 
 
@@ -472,16 +534,18 @@
 </section>
 
 
-<!-- Countdown -->
-<section class="countdown-section">
-  <h2 class="countdown-title">Faltan...</h2>
-  <div class="countdown">
-    <span id="days">00 <small>Días</small></span>
-    <span id="hours">00 <small>Horas</small></span>
-    <span id="mins">00 <small>Min</small></span>
-    <span id="secs">00 <small>Seg</small></span>
-  </div>
-</section>
+<!-- Countdown original guardado para volver fácilmente si hace falta -->
+<template id="countdown-original-template">
+  <section class="countdown-section">
+    <h2 class="countdown-title">Faltan...</h2>
+    <div class="countdown">
+      <span id="days">00 <small>Días</small></span>
+      <span id="hours">00 <small>Horas</small></span>
+      <span id="mins">00 <small>Min</small></span>
+      <span id="secs">00 <small>Seg</small></span>
+    </div>
+  </section>
+</template>
 
 
 <!-- Fiesta -->
@@ -524,7 +588,7 @@
 
 <!-- Música -->
 <section class="accent-section">
-  <img src="images/icono-canciones.svg" alt="Canciones" class="icon icon-lg icon-on-dark">
+  <img src="images/icono-canciones.svg" alt="Canciones" class="icon icon-lg">
   <h2 class="section-title">¡Ayudame a elegir la música!</h2>
   <p class="large-copy">Podés sugerir tus canciones favoritas para la fiesta.</p>
   <a href="https://forms.gle/U47LLVu3waB6swKh6" target="_blank" class="btn btn-turquoise">Sugerir Canción</a>
